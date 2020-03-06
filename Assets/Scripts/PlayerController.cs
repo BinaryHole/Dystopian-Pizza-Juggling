@@ -6,12 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
     public int controlSpeed;
+    public int drag;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.drag = 2;
-        controlSpeed = 50;
+        rb.drag = drag;
     }
 
     void Update()
