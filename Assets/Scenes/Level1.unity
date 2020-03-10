@@ -586,6 +586,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda1b73c5733ee24a850271c77f18883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pepperoniPizza: {fileID: 0}
-  hawaiianPizza: {fileID: 0}
-  spicyPizza: {fileID: 0}
+  pepperoniPizza: {fileID: 6077524256271395058, guid: 9d2fb13ac0da03c45b719c872d63c898,
+    type: 3}
+  hawaiianPizza: {fileID: 8971155295741731103, guid: f076e183ef7eace46913b75dfdde7931,
+    type: 3}
+  spicyPizza: {fileID: 964950825682293323, guid: 058c00566a6c8764496f68cd8172b496,
+    type: 3}
+  player: {fileID: 1243198633}
