@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
+    public GameObject player;
     public int controlSpeed;
     public int drag;
 
@@ -19,6 +20,10 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0);
+
+        // make the player face the direction of motion
+        //player.transform.LookAt(movement);
+
         rb.AddForce(movement * controlSpeed);
     }
 }

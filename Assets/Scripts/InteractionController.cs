@@ -38,6 +38,9 @@ public class InteractionController : MonoBehaviour
             Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             Vector3 direction;
+            
+            // draw a visual ray in blue for 2 seconds (only visible in the viewport)
+            Debug.DrawRay(Camera.main.transform.position, cameraRay.direction * 1000, Color.blue, 2);
 
             // if the ray has collided with an object
             if (Physics.Raycast(cameraRay, out hit))
