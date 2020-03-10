@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class InteractionController : MonoBehaviour
 {
+    // reference to different types of pizzas
     public GameObject pepperoniPizza;
     public GameObject hawaiianPizza;
     public GameObject spicyPizza;
 
+    // reference to the player
     public GameObject player;
 
     // Start is called before the first frame update
@@ -26,24 +28,34 @@ public class InteractionController : MonoBehaviour
     // Handles pizza throwing (checks if user is pressing left-mouse)
     void checkForShoot()
     {
+        // check if the player is clicking the left mouse
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             // instantiate the projectile pizza
             GameObject pizza = Instantiate(pepperoniPizza, player.transform.position, Quaternion.identity) as GameObject;
 
+            // initialize the camera-mouse ray, the ray-collision marker, and the final vector direction
             Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             Vector3 direction;
 
+            // if the ray has collided with an object
             if (Physics.Raycast(cameraRay, out hit))
             {
+                // create a direction from the initialized pizza to the collided hitpoint
                 direction = (hit.point - pizza.transform.position).normalized;
+
+            // if the ray has not collided with an object
             } else
             {
+                // create a direction from the camera-mouse ray
                 direction = cameraRay.direction.normalized;
             }
 
+            // draw a visual ray in red for 2 seconds (only visible in the viewport)
             Debug.DrawRay(pizza.transform.position, direction*1000, Color.red, 2);
+
+            // apply the force to the initialize pizza 
             pizza.GetComponent<Rigidbody>().AddForce(direction * 1000);
         }
     }
