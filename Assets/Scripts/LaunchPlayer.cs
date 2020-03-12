@@ -9,7 +9,7 @@ public class LaunchPlayer : MonoBehaviour
     public GameObject mainCamera;
 
     public Vector3 launchVector = new Vector3(0, 30, 0);
-    public Vector3 playerSpeed = new Vector3(0, 0, 1);
+    public double playerSpeed = 10;
     public bool isLaunched;
 
     // Vars for audio sources, since there are multiple I use an array.
@@ -47,8 +47,7 @@ public class LaunchPlayer : MonoBehaviour
         //player moves at constant speed forward
         if (isLaunched)
         {
-            //print("hi");
-            rb.transform.position += playerSpeed;
+            rb.transform.position += new Vector3(0, 0, (float) (playerSpeed/100));
         }
         
     }
