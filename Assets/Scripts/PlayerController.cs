@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(movement * controlSpeed);
         }
-
-        //print(isLaunched);
+        print(isLaunched);
     }
 }

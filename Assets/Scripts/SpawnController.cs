@@ -32,7 +32,7 @@ public class SpawnController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // check if the object is a roadTile
-        if (other.tag == "roadTile")
+        if (other.tag == "roadTag")
         {
             // despawn the road tile
             despawnRoadTile(other.gameObject);
@@ -60,7 +60,7 @@ public class SpawnController : MonoBehaviour
         Destroy(roadTile);
 
         // decrease the tile count so that a new road tile can be spawned
-        tileCount -= 1;
+        tileCount--;
     }
 
     // used to spawn a road tile at the end of the existing tiles
