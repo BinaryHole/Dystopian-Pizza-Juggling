@@ -7,6 +7,8 @@ TagManager:
   - cash
   - roadTile
   - followPlayer
+  - Pizza
+  - House
   layers:
   - Default
   - TransparentFX
