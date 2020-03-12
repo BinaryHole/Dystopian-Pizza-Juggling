@@ -19,7 +19,7 @@ public class SpawnController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tileCount = 0;
+        tileCount = 1;
     }
 
     // Update is called once per frame
