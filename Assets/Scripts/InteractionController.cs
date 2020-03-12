@@ -9,6 +9,9 @@ public class InteractionController : MonoBehaviour
     public GameObject hawaiianPizza;
     public GameObject spicyPizza;
 
+    // used to determine the speed of the pizza thrown (~1-100)
+    public double pizzaSpeed;
+
     // reference to the player
     public GameObject player;
 
@@ -59,7 +62,7 @@ public class InteractionController : MonoBehaviour
             Debug.DrawRay(pizza.transform.position, direction*1000, Color.red, 2);
 
             // apply the force to the initialize pizza 
-            pizza.GetComponent<Rigidbody>().AddForce(direction * 1000);
+            pizza.GetComponent<Rigidbody>().AddForce(direction * (float) (pizzaSpeed*100));
         }
     }
 }

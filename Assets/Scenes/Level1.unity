@@ -212,7 +212,7 @@ RectTransform:
   m_Children:
   - {fileID: 2113453905}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -685,7 +685,7 @@ MonoBehaviour:
   player: {fileID: 1243198633}
   mainCamera: {fileID: 0}
   launchVector: {x: 0, y: 0, z: 0}
-  playerSpeed: 50
+  playerSpeed: 40
   isLaunched: 0
   sounds: []
   surfMusic: {fileID: 0}
@@ -722,6 +722,7 @@ MonoBehaviour:
     type: 3}
   spicyPizza: {fileID: 964950825682293323, guid: 058c00566a6c8764496f68cd8172b496,
     type: 3}
+  pizzaSpeed: 30
   player: {fileID: 1243198633}
 --- !u!82 &1759589834
 AudioSource:
@@ -992,7 +993,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086514066
 GameObject:
@@ -1321,7 +1322,7 @@ PrefabInstance:
     - target: {fileID: 6667223151350651738, guid: c2dc2241633b0aa40ac19d5f7616f467,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6667223151350651738, guid: c2dc2241633b0aa40ac19d5f7616f467,
         type: 3}
@@ -1340,72 +1341,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2dc2241633b0aa40ac19d5f7616f467, type: 3}
---- !u!1001 &7597656300983564715
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2964086761461727845, guid: e88618249b955f14099ca0c448ee774a,
-        type: 3}
-      propertyPath: m_Name
-      value: Long Test Road
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.033625007
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e88618249b955f14099ca0c448ee774a, type: 3}
