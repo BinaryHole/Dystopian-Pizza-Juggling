@@ -552,7 +552,7 @@ MonoBehaviour:
   player: {fileID: 1243198633}
   mainCamera: {fileID: 0}
   launchVector: {x: 0, y: 0, z: 0}
-  playerSpeed: {x: 0, y: 0, z: 0}
+  playerSpeed: {x: 0, y: 0, z: 1}
   sounds: []
   surfMusic: {fileID: 0}
   kaboom: {fileID: 0}
