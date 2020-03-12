@@ -9,6 +9,9 @@ public class InteractionController : MonoBehaviour
     public GameObject hawaiianPizza;
     public GameObject spicyPizza;
 
+    // reference to parent gameObject to spawn pizzas in
+    public GameObject spawnPizzasFrom;
+
     // used to determine the speed of the pizza thrown (~1-100)
     public double pizzaSpeed;
 
@@ -35,7 +38,7 @@ public class InteractionController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             // instantiate the projectile pizza
-            GameObject pizza = Instantiate(pepperoniPizza, player.transform.position, Quaternion.identity) as GameObject;
+            GameObject pizza = Instantiate(pepperoniPizza, player.transform.position, Quaternion.identity, spawnPizzasFrom.transform) as GameObject;
 
             // initialize the camera-mouse ray, the ray-collision marker, and the final vector direction
             Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);

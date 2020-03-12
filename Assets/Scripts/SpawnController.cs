@@ -5,6 +5,10 @@ using UnityEngine;
 public class SpawnController : MonoBehaviour
 {
     public GameObject road1;
+    public GameObject spawnRoadsFrom;
+
+    public GameObject building1;
+    public GameObject spawnBuildingsFrom;
 
     // track of the current number of tiles
     private int tileCount;
@@ -32,7 +36,7 @@ public class SpawnController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // check if the object is a roadTile
-        if (other.tag == "roadTag")
+        if (other.tag == "roadTile")
         {
             // despawn the road tile
             despawnRoadTile(other.gameObject);
@@ -47,10 +51,21 @@ public class SpawnController : MonoBehaviour
 
     void spawnNewTiles()
     {
+        // calculate the z-offset of the new tile
+        float zOffset = (float)(lastTileOffset + tileSize);
+
         // spawn new tiles as needed
         if (tileCount < tileLimit)
         {
-            spawnRoadTile();
+            // spawn a new tile row (road and buildings)
+            spawnRoadTile(zOffset);
+            spawnBuildingTiles(zOffset);
+
+            // set the last tile offset to the zOffset of the new tile
+            lastTileOffset = zOffset;
+
+            // update the tile count
+            tileCount++;
         }
     }
 
@@ -60,25 +75,28 @@ public class SpawnController : MonoBehaviour
         Destroy(roadTile);
 
         // decrease the tile count so that a new road tile can be spawned
-        tileCount--;
+        tileCount -= 1;
     }
 
     // used to spawn a road tile at the end of the existing tiles
-    void spawnRoadTile()
+    void spawnRoadTile(float zOffset)
     {
-        // calculate the z-offset of the new tile
-        float zOffset = (float) (lastTileOffset + tileSize);
-
         // calculate the position of the new tile
         Vector3 newPos = new Vector3(0, 0, zOffset);
 
         // spawn the new road tile
-        Instantiate(road1, newPos, Quaternion.identity);
+        Instantiate(road1, newPos, Quaternion.identity, spawnRoadsFrom.transform);
+    }
 
-        // set the last tile offset to the zOffset of the new tile
-        lastTileOffset = zOffset;
+    // spawns 2 building tiles on each side of the latest road tile
+    void spawnBuildingTiles(float zOffset)
+    {
+        // calculate the positions of the new tiles
+        Vector3 pos1 = new Vector3((float) (-1 * tileSize), 5, zOffset);
+        Vector3 pos2 = new Vector3((float) tileSize, 5, zOffset);
 
-        // update the tile count
-        tileCount++;
+        // spawn both new buildings
+        Instantiate(building1, pos1, Quaternion.identity, spawnBuildingsFrom.transform);
+        Instantiate(building1, pos2, Quaternion.identity, spawnBuildingsFrom.transform);
     }
 }
