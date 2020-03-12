@@ -10,7 +10,7 @@ public class LaunchPlayer : MonoBehaviour
 
     public Vector3 launchVector = new Vector3(0, 30, 0);
     public Vector3 playerSpeed = new Vector3(0, 0, 1);
-    private bool isLaunched;
+    public bool isLaunched;
 
     // Vars for audio sources, since there are multiple I use an array.
     public AudioSource[] sounds;
@@ -26,12 +26,11 @@ public class LaunchPlayer : MonoBehaviour
         sounds = GetComponents<AudioSource>();
         surfMusic = sounds[0];
         kaboom = sounds[1];
-
     }
 
     void Update()
     {
-        if (!isLaunched && Input.GetKeyDown(KeyCode.Space))
+        if (!isLaunched && Input.GetKey(KeyCode.Space))
         {
             isLaunched = true;
             rb.AddForce(0, 30, 0, ForceMode.Impulse); //switch to use launchvector
@@ -40,12 +39,16 @@ public class LaunchPlayer : MonoBehaviour
             // Now play music
             surfMusic.Play(0);
             kaboom.Play(0);
+
+            //for updating isLaunched in the PlayerController script
+            player.GetComponent<PlayerController>().isLaunched = true;
         }
 
+        //player moves at constant speed forward
         if (isLaunched)
         {
-            print("hi");
             rb.transform.position += playerSpeed;
         }
+        
     }
 }
