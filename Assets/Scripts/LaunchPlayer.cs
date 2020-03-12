@@ -12,10 +12,13 @@ public class LaunchPlayer : MonoBehaviour
     public Vector3 playerSpeed = new Vector3(0, 0, 1);
     private bool isLaunched;
 
+    AudioSource surfMusic;
+
     void Start()
     {
         isLaunched = false;
         rb = player.GetComponent<Rigidbody>();
+        surfMusic = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -31,6 +34,9 @@ public class LaunchPlayer : MonoBehaviour
         {
             print("hi");
             rb.transform.position += playerSpeed;
+
+            // Play music on launch
+            surfMusic.Play(0);
         }
     }
 }
