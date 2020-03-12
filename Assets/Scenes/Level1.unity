@@ -684,7 +684,7 @@ MonoBehaviour:
   player: {fileID: 1243198633}
   mainCamera: {fileID: 0}
   launchVector: {x: 0, y: 0, z: 0}
-  playerSpeed: {x: 0, y: 0, z: 1}
+  playerSpeed: {x: 0, y: 0, z: 0.5}
   isLaunched: 0
   sounds: []
   surfMusic: {fileID: 0}
@@ -1111,12 +1111,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: a4fc6ebf470d14f4ebff5b8b7d0b7192, type: 3}
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 50
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1320,7 +1320,7 @@ PrefabInstance:
     - target: {fileID: 6667223151350651738, guid: c2dc2241633b0aa40ac19d5f7616f467,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6667223151350651738, guid: c2dc2241633b0aa40ac19d5f7616f467,
         type: 3}
@@ -1389,7 +1389,7 @@ PrefabInstance:
     - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7041565897818852142, guid: e88618249b955f14099ca0c448ee774a,
         type: 3}
