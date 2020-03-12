@@ -44,7 +44,7 @@ public class LaunchPlayer : MonoBehaviour
 
         if (isLaunched)
         {
-            print("hi");
+            //print("hi");
             rb.transform.position += playerSpeed;
         }
     }
