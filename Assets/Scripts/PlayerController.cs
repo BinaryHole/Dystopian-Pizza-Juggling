@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public GameObject player;
     public int controlSpeed;
     public int drag;
+    public bool isLaunched;
 
     void Start()
     {
@@ -23,10 +24,10 @@ public class PlayerController : MonoBehaviour
 
         // make the player face the direction of motion
         //player.transform.LookAt(movement);
-
-        rb.AddForce(movement * controlSpeed);
+        if (isLaunched)
+        {
+            rb.AddForce(movement * controlSpeed);
+        }
+        print(isLaunched);
     }
 }
-
-//https://learn.unity.com/tutorial/movement-basics?projectId=5c514956edbc2a002069467c#5c7f8528edbc2a002053b70f move tutorial
-//character will launch in the x direction and will control movement in the y (up) and z (left/right) directions
