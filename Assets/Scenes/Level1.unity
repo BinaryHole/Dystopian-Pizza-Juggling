@@ -1573,7 +1573,7 @@ PrefabInstance:
     - target: {fileID: 5471787755456119990, guid: 860eb4e71227e8e48a29ebdbac8734d0,
         type: 3}
       propertyPath: m_Name
-      value: HouseTest
+      value: DeliverySpot
       objectReference: {fileID: 0}
     - target: {fileID: 5471787755456119987, guid: 860eb4e71227e8e48a29ebdbac8734d0,
         type: 3}
