@@ -11,11 +11,13 @@ public class LaunchPlayer : MonoBehaviour
     public Vector3 launchVector = new Vector3(0, 30, 0);
     public Vector3 playerSpeed = new Vector3(0, 0, 1);
     private bool isLaunched;
+    public AudioSource surfMusic;
 
     void Start()
     {
         isLaunched = false;
         rb = player.GetComponent<Rigidbody>();
+        surfMusic = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -25,6 +27,8 @@ public class LaunchPlayer : MonoBehaviour
             isLaunched = true;
             rb.AddForce(0, 30, 0, ForceMode.Impulse); //switch to use launchvector
             //add a line of code in the camera following player code to check if isLaunched is checked
+
+            surfMusic.Play(0);
         }
 
         if (isLaunched)
