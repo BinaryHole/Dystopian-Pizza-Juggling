@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5471787755456119984}
   - component: {fileID: 5471787755456119991}
   m_Layer: 0
-  m_Name: HouseTest
+  m_Name: DeliverySpot
   m_TagString: House
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,5 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc7e7162d356c0b458cc971941f4525b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cashPrefab: {fileID: 0}
-  spawnRate: 5
+  cashPrefab: {fileID: 4093875514283190793, guid: 7eecb0b4fcf516742b25194917d2379d,
+    type: 3}
+  deliveredMaterial: {fileID: 2100000, guid: 7d980a96b6f1d684c901b84d19334a5e, type: 2}
+  flyForce: 10
+  tileWidth: 10

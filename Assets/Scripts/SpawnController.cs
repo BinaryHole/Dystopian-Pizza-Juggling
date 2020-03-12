@@ -8,10 +8,16 @@ public class SpawnController : MonoBehaviour
     public GameObject spawnRoadsFrom;
 
     public GameObject building1;
+    public GameObject deliveryBuilding;
     public GameObject spawnBuildingsFrom;
 
-    // track of the current number of tiles
-    private int tileCount;
+    double regularBuildingProb;
+
+    public double startingDeliveryBuildingProb;
+    double deliveryBuildingProb;
+
+    // track of the current number of tile rows
+    private int rowCount;
 
     // define tile characteristics for spawning
     public int tileLimit;
@@ -23,7 +29,10 @@ public class SpawnController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tileCount = 1;
+        // initalize variables
+        rowCount = 1;
+        deliveryBuildingProb = startingDeliveryBuildingProb;
+        regularBuildingProb = 1 - deliveryBuildingProb;
     }
 
     // Update is called once per frame
@@ -55,7 +64,7 @@ public class SpawnController : MonoBehaviour
         float zOffset = (float)(lastTileOffset + tileSize);
 
         // spawn new tiles as needed
-        if (tileCount < tileLimit)
+        if (rowCount < tileLimit)
         {
             // spawn a new tile row (road and buildings)
             spawnRoadTile(zOffset);
@@ -64,8 +73,8 @@ public class SpawnController : MonoBehaviour
             // set the last tile offset to the zOffset of the new tile
             lastTileOffset = zOffset;
 
-            // update the tile count
-            tileCount++;
+            // update the tile row count
+            rowCount++;
         }
     }
 
@@ -74,8 +83,8 @@ public class SpawnController : MonoBehaviour
         // destroy the road tile
         Destroy(roadTile);
 
-        // decrease the tile count so that a new road tile can be spawned
-        tileCount -= 1;
+        // decrease the tile row count so that a new road tile can be spawned
+        rowCount -= 1;
     }
 
     // used to spawn a road tile at the end of the existing tiles
@@ -95,8 +104,33 @@ public class SpawnController : MonoBehaviour
         Vector3 pos1 = new Vector3((float) (-1 * tileSize), 5, zOffset);
         Vector3 pos2 = new Vector3((float) tileSize, 5, zOffset);
 
+        // determine the building types of the new tiles
+        GameObject type1 = determineBuildingType();
+        GameObject type2 = determineBuildingType();
+
         // spawn both new buildings
-        Instantiate(building1, pos1, Quaternion.identity, spawnBuildingsFrom.transform);
-        Instantiate(building1, pos2, Quaternion.identity, spawnBuildingsFrom.transform);
+        Instantiate(type1, pos1, Quaternion.identity, spawnBuildingsFrom.transform);
+        Instantiate(type2, pos2, Quaternion.identity, spawnBuildingsFrom.transform);
+    }
+
+    // randomly determines a new building type based on the probability weights of each building type
+    GameObject determineBuildingType()
+    {
+        // get a random number between 0-1 (inclusive)
+        float rand = Random.value;
+
+        if (rand <= regularBuildingProb)
+        {
+            // spawn regular building
+            return building1;
+        } 
+        else if (rand <= regularBuildingProb+deliveryBuildingProb)
+        {
+            // spawn delivery building
+            return deliveryBuilding;
+        }
+
+        // return building1 if something goes wrong
+        return building1;
     }
 }

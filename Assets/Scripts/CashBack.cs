@@ -4,35 +4,66 @@ using UnityEngine;
 
 public class CashBack : MonoBehaviour
 {
-    
-    public Transform cashPrefab;
-    public float spawnRate = 5.0f;
+    // location to organize cash in the scene hierarchy
+    GameObject spawnCashFrom;
+
+    // reference gameObjects
+    public GameObject cashPrefab;
+    public Material deliveredMaterial;
+
+    // force applied to the cash after spawning to 'fly' it to the middle of the road
+    public double flyForce;
+
+    // offset towards the center of the road for cash spawning
+    public double tileWidth;
+
+    // track if the building has been delivered to or not
+    bool isDelivered;
+
+    private void Start()
+    {
+        // initialize variables
+        isDelivered = false;
+
+        // find the cash empty-object in the hierarchy
+        spawnCashFrom = GameObject.FindGameObjectWithTag("cashLocation");
+    }
 
     //Check if the pizza thrown collided with the house object
     //if they collided, spawn cash
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Pizza")
+        // if the current building has not been delivered to, 
+        if (!isDelivered && other.gameObject.tag == "Pizza")
         {
-            StartCoroutine("SpawnCash");
+            // spawn the cash
+            SpawnCash();
+
+            // set delivered
+            isDelivered = true;
+
+            // update the material of the building
+            GetComponent<Renderer>().material = deliveredMaterial;
         }
-            //isDelivered = true;
     }
 
-    IEnumerator SpawnCash()
+    void SpawnCash()
     {
+        Debug.Log("Cash Spawned!");
+
+        // calulate vector towards center of road
+        Vector3 atMiddle = new Vector3(0, transform.position.y, transform.position.z);
+
+        // calculate vector heading from the building towards atMiddle
+        Vector3 toMiddle = (atMiddle - transform.position).normalized;
+
+        // calculate spawn position of the cash (to spawn on the correct side of the building)
+        Vector3 pos = transform.position + (toMiddle * (float) tileWidth/2);
+
         // Create cash in the position above the house
-        Vector3 position = new Vector3((GameObject.FindGameObjectWithTag("House").transform.position.x), (GameObject.FindGameObjectWithTag("House").transform.position.y + 2.0f), (GameObject.FindGameObjectWithTag("House").transform.position.z + 10.0f));
-        Instantiate(cashPrefab, position, Quaternion.identity);
+        GameObject cash = Instantiate(cashPrefab, pos, Quaternion.identity, spawnCashFrom.gameObject.transform);
 
-        // Spawn a fly anywhere between 0.6 seconds to the max spawn rate (default 5). 
-        yield return new WaitForSeconds(Random.Range(0.6f, spawnRate));
-        if (spawnRate >= 1.2f)
-        {
-            spawnRate -= 0.2f;
-        }
-
-
+        // apply force towards center of road
+        cash.GetComponent<Rigidbody>().AddForce(toMiddle * (float) (flyForce*100));
     }
-
 }
