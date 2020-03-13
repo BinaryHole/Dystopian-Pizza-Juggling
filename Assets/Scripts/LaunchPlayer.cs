@@ -38,8 +38,10 @@ public class LaunchPlayer : MonoBehaviour
 
         if (isLaunched)
         {
+            Vector3 motion = new Vector3(0, 0, (float)(playerSpeed / 100));
+
             // player moves at constant speed forward
-            rb.transform.position += new Vector3(0, 0, (float) (playerSpeed/100));
+            rb.transform.position += motion;
         }
     }
 
