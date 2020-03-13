@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2641967597377509751}
   - component: {fileID: 4969162706021278270}
   - component: {fileID: 3956301916579061995}
-  - component: {fileID: 5381293200099507364}
+  - component: {fileID: 8604531918529562626}
   m_Layer: 0
   m_Name: buildingTest
   m_TagString: Untagged
@@ -93,7 +93,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5381293200099507364
+--- !u!54 &8604531918529562626
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

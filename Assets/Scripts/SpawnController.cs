@@ -42,6 +42,22 @@ public class SpawnController : MonoBehaviour
         spawnNewTiles();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        // check if the object is a roadTile
+        if (collision.gameObject.tag == "roadTile")
+        {
+            // despawn the road tile
+            despawnRoadTile(collision.gameObject);
+        }
+
+        // destroy the gameobject normally if it isn't a roadtile
+        else
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         // check if the object is a roadTile

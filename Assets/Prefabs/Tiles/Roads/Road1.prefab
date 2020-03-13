@@ -323,8 +323,8 @@ GameObject:
   - component: {fileID: 6976760409153697851}
   - component: {fileID: 2958087716029387770}
   - component: {fileID: 1960199676492642501}
-  - component: {fileID: 8329754824530874177}
   - component: {fileID: 2184188059398407169}
+  - component: {fileID: 5070748992106009378}
   m_Layer: 0
   m_Name: Road1
   m_TagString: roadTile
@@ -398,7 +398,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &8329754824530874177
+--- !u!65 &2184188059398407169
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8425794230073714454}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0.5581875, z: 10}
+  m_Center: {x: 0, y: -0.7031908, z: 0}
+--- !u!54 &5070748992106009378
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,19 +427,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2184188059398407169
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8425794230073714454}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 0.5581875, z: 10}
-  m_Center: {x: 0, y: -0.7031908, z: 0}
 --- !u!1 &8462278690718635764
 GameObject:
   m_ObjectHideFlags: 0

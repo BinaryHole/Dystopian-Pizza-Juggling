@@ -30,7 +30,7 @@ public class DespawnPizza : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // if the pizza collides with something other than the player
-        if (other.tag != "Player")
+        if (other.tag != "Player" && other.tag != "House")
         {
             // destroy the pizza
             Destroy(gameObject);

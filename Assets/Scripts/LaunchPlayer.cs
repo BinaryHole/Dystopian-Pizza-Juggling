@@ -32,23 +32,28 @@ public class LaunchPlayer : MonoBehaviour
     {
         if (!isLaunched && Input.GetKey(KeyCode.Space))
         {
-            isLaunched = true;
-            rb.AddForce(0, 30, 0, ForceMode.Impulse); //switch to use launchvector
-            //add a line of code in the camera following player code to check if isLaunched is checked
-
-            // Now play music
-            surfMusic.Play(0);
-            kaboom.Play(0);
-
-            //for updating isLaunched in the PlayerController script
-            player.GetComponent<PlayerController>().isLaunched = true;
+            // launch the player
+            launch();
         }
 
-        //player moves at constant speed forward
         if (isLaunched)
         {
+            // player moves at constant speed forward
             rb.transform.position += new Vector3(0, 0, (float) (playerSpeed/100));
         }
-        
+    }
+
+    void launch()
+    {
+        isLaunched = true;
+        rb.AddForce(0, 30, 0, ForceMode.Impulse); //switch to use launchvector
+                                                  //add a line of code in the camera following player code to check if isLaunched is checked
+
+        // Now play music
+        surfMusic.Play(0);
+        kaboom.Play(0);
+
+        //for updating isLaunched in the PlayerController script
+        player.GetComponent<PlayerController>().isLaunched = true;
     }
 }
