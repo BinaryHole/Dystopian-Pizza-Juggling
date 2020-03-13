@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
+    // road prefab(s) and spawn location
     public GameObject road1;
     public GameObject spawnRoadsFrom;
 
+    // building prefabs and spawn location
     public GameObject building1;
+    public GameObject building2;
     public GameObject deliveryBuilding;
     public GameObject spawnBuildingsFrom;
-
+    // probability of spawning a regular building
     double regularBuildingProb;
-
+    // defined start-point for the delivery-buidling probability
     public double startingDeliveryBuildingProb;
+
+    // code-defined delivery-building probability
     double deliveryBuildingProb;
 
     // track of the current number of tile rows

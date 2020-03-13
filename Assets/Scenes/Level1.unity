@@ -594,7 +594,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 197322750, z: 9.12e-43, w: 164824320}
+  m_BoundingSphereOverride: {x: 4.815e-42, y: 6e-44, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1724,11 +1724,12 @@ MonoBehaviour:
   spawnRoadsFrom: {fileID: 1542850400}
   building1: {fileID: 1302644398651832060, guid: 0ca5689264fbd274892f818d9c88ccf0,
     type: 3}
+  building2: {fileID: 0}
   deliveryBuilding: {fileID: 3681999174990759992, guid: 341d299d26dbd4c4692bebe7aec424c5,
     type: 3}
   spawnBuildingsFrom: {fileID: 1182999229}
   startingDeliveryBuildingProb: 0.1
-  tileLimit: 20
+  tileLimit: 30
   tileSize: 10
 --- !u!65 &2086514068
 BoxCollider:
