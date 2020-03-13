@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.740792, g: 0.7250077, b: 0.77621233, a: 1}
+  m_IndirectSpecularColor: {r: 0.74076754, g: 0.72498125, b: 0.7761968, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1378,7 +1378,8 @@ MonoBehaviour:
   mainCamera: {fileID: 963194225}
   launchVector: {x: 0, y: 0, z: 0}
   playerSpeed: 35
-  maxDistance: 100
+  distanceTravelled: 0
+  maxDistance: 500
   isLaunched: 0
   isLanded: 0
   sounds: []

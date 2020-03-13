@@ -11,7 +11,7 @@ public class LaunchPlayer : MonoBehaviour
     public Vector3 launchVector = new Vector3(0, 30, 0);
     public double playerSpeed = 10;
     private float playerStartX;
-    private float distanceTravelled;
+    public float distanceTravelled;
     public float maxDistance;
     public bool isLaunched;
     public bool isLanded;
