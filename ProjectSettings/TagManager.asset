@@ -10,6 +10,7 @@ TagManager:
   - Pizza
   - House
   - cashLocation
+  - Hazard
   layers:
   - Default
   - TransparentFX
