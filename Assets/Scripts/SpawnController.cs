@@ -122,8 +122,8 @@ public class SpawnController : MonoBehaviour
     void spawnBuildingTiles(float zOffset)
     {
         // calculate the positions of the new tiles
-        Vector3 pos1 = new Vector3((float) (-1 * tileSize), 5, zOffset);
-        Vector3 pos2 = new Vector3((float) tileSize, 5, zOffset);
+        Vector3 pos1 = new Vector3((float) (-1 * tileSize), 0, zOffset);
+        Vector3 pos2 = new Vector3((float) tileSize, 0, zOffset);
 
         // determine the building types of the new tiles
         GameObject type1 = determineBuildingType();
