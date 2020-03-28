@@ -4,25 +4,9 @@ using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
-    // road prefab(s) and spawn location
-    public GameObject road1;
-    public GameObject spawnRoadsFrom;
-
-    // building prefabs and spawn location
-    public GameObject building1;
-    public GameObject building2;
-    public GameObject deliveryBuilding;
-    public GameObject spawnBuildingsFrom;
-    // probability of spawning a regular building
-    double regularBuildingProb;
-    // defined start-point for the delivery-buidling probability
-    public double startingDeliveryBuildingProb;
-
-    // code-defined delivery-building probability
-    double deliveryBuildingProb;
-
-    // track of the current number of tile rows
-    private int rowCount;
+    // delegate used to send spawn events to the spawner scripts (spawn roads and spawn buildigns)
+    public delegate void SpawnRowDelegate(float offset, double tileSize, bool isEndOfLevel);
+    public event SpawnRowDelegate spawnRow;
 
     // define tile characteristics for spawning
     public int tileLimit;
@@ -31,13 +15,14 @@ public class SpawnController : MonoBehaviour
     // position the last tile spawned, used when spawning new tiles to calculate the offset
     float lastTileOffset;
 
+    // track of the current number of tile rows
+    private int rowCount;
+
     // Start is called before the first frame update
     void Start()
     {
-        // initalize variables
+        // initalize rowCount
         rowCount = 1;
-        deliveryBuildingProb = startingDeliveryBuildingProb;
-        regularBuildingProb = 1 - deliveryBuildingProb;
     }
 
     // Update is called once per frame
@@ -47,6 +32,34 @@ public class SpawnController : MonoBehaviour
         spawnNewTiles();
     }
 
+    void spawnNewTiles()
+    {
+        // calculate the z-offset of the new tile
+        float zOffset = (float)(lastTileOffset + tileSize);
+
+        // spawn new tiles as needed
+        if (rowCount < tileLimit)
+        {
+            // spawn a new tile row (road and buildings)
+            spawnRow(zOffset, tileSize, false);
+
+            // set the last tile offset to the zOffset of the new tile
+            lastTileOffset = zOffset;
+
+            // update the tile row count
+            rowCount++;
+        }
+    }
+
+    void despawnRoadTile(GameObject roadTile)
+    {
+        // destroy the road tile
+        Destroy(roadTile);
+
+        // decrease the tile row count so that a new road tile can be spawned
+        rowCount -= 1;
+    }
+ 
     private void OnCollisionEnter(Collision collision)
     {
         // check if the object is a roadTile
@@ -77,81 +90,5 @@ public class SpawnController : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-    }
-
-    void spawnNewTiles()
-    {
-        // calculate the z-offset of the new tile
-        float zOffset = (float)(lastTileOffset + tileSize);
-
-        // spawn new tiles as needed
-        if (rowCount < tileLimit)
-        {
-            // spawn a new tile row (road and buildings)
-            spawnRoadTile(zOffset);
-            spawnBuildingTiles(zOffset);
-
-            // set the last tile offset to the zOffset of the new tile
-            lastTileOffset = zOffset;
-
-            // update the tile row count
-            rowCount++;
-        }
-    }
-
-    void despawnRoadTile(GameObject roadTile)
-    {
-        // destroy the road tile
-        Destroy(roadTile);
-
-        // decrease the tile row count so that a new road tile can be spawned
-        rowCount -= 1;
-    }
-
-    // used to spawn a road tile at the end of the existing tiles
-    void spawnRoadTile(float zOffset)
-    {
-        // calculate the position of the new tile
-        Vector3 newPos = new Vector3(0, 0, zOffset);
-
-        // spawn the new road tile
-        Instantiate(road1, newPos, Quaternion.identity, spawnRoadsFrom.transform);
-    }
-
-    // spawns 2 building tiles on each side of the latest road tile
-    void spawnBuildingTiles(float zOffset)
-    {
-        // calculate the positions of the new tiles
-        Vector3 pos1 = new Vector3((float) (-1 * tileSize), 0, zOffset);
-        Vector3 pos2 = new Vector3((float) tileSize, 0, zOffset);
-
-        // determine the building types of the new tiles
-        GameObject type1 = determineBuildingType();
-        GameObject type2 = determineBuildingType();
-
-        // spawn both new buildings
-        Instantiate(type1, pos1, Quaternion.identity, spawnBuildingsFrom.transform);
-        Instantiate(type2, pos2, Quaternion.identity, spawnBuildingsFrom.transform);
-    }
-
-    // randomly determines a new building type based on the probability weights of each building type
-    GameObject determineBuildingType()
-    {
-        // get a random number between 0-1 (inclusive)
-        float rand = Random.value;
-
-        if (rand <= regularBuildingProb)
-        {
-            // spawn regular building
-            return building1;
-        } 
-        else if (rand <= regularBuildingProb+deliveryBuildingProb)
-        {
-            // spawn delivery building
-            return deliveryBuilding;
-        }
-
-        // return building1 if something goes wrong
-        return building1;
     }
 }

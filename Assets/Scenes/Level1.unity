@@ -789,6 +789,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1182999230}
+  - component: {fileID: 1182999231}
   m_Layer: 0
   m_Name: Buildings
   m_TagString: Untagged
@@ -812,6 +813,27 @@ Transform:
   m_Father: {fileID: 898517475}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1182999231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182999229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d24416b269ff6a419978abda6d1f276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingPrimary: {fileID: 3938619659805552923, guid: eb68bb204374cda498cecc0933c4350f,
+    type: 3}
+  buildingVariant1: {fileID: 7394594532585551333, guid: d2fb0a4d79de03e4a8d97e172089d352,
+    type: 3}
+  buildingVariant1Prob: 0.4
+  deliveryBuilding: {fileID: 3681999174990759992, guid: 341d299d26dbd4c4692bebe7aec424c5,
+    type: 3}
+  spawnBuildingsFrom: {fileID: 1182999229}
+  startingDeliveryBuildingProb: 0.2
 --- !u!1 &1243198633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,6 +1029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1542850401}
+  - component: {fileID: 1542850402}
   m_Layer: 0
   m_Name: Roads
   m_TagString: Untagged
@@ -1029,6 +1052,24 @@ Transform:
   m_Father: {fileID: 898517475}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1542850402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542850400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8e813621968d848ac2788e6ed777ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadPrimary: {fileID: 1552284107138762144, guid: b0f13c5a426370043a63d525394a861f,
+    type: 3}
+  roadVariant1: {fileID: 2916871530078529516, guid: b9af777e49859b849be0aea413a00c07,
+    type: 3}
+  roadVariant1Prob: 0.2
+  spawnRoadsFrom: {fileID: 1542850400}
 --- !u!1 &1577436524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,16 +1842,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fccc51fc59e2be49b473f77de9433f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  road1: {fileID: 1552284107138762144, guid: b0f13c5a426370043a63d525394a861f, type: 3}
-  spawnRoadsFrom: {fileID: 1542850400}
-  building1: {fileID: 3938619659805552923, guid: eb68bb204374cda498cecc0933c4350f,
-    type: 3}
-  building2: {fileID: 7394594532585551333, guid: d2fb0a4d79de03e4a8d97e172089d352,
-    type: 3}
-  deliveryBuilding: {fileID: 3681999174990759992, guid: 341d299d26dbd4c4692bebe7aec424c5,
-    type: 3}
-  spawnBuildingsFrom: {fileID: 1182999229}
-  startingDeliveryBuildingProb: 0.1
   tileLimit: 30
   tileSize: 10
 --- !u!65 &2086514068
