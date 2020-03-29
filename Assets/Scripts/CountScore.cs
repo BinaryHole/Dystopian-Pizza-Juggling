@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// TODO: Make the player score a variable in here, instead of on the player model. 
 public class CountScore : MonoBehaviour
 {
+    public int cash = 0;
+    public int pizzasDelivered = 0;
+    public int peopleKilled = 0;
+    
     public Text CashText;
 
 
@@ -18,8 +21,7 @@ public class CountScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int myCash = GameObject.Find("Player").GetComponent<Pickup>().cash;
-        CashText.text = "Cash: $" + myCash;
+        CashText.text = "Cash: $" + cash;
     }
 
 }
