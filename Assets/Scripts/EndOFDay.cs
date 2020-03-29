@@ -32,14 +32,14 @@ public class EndOFDay : MonoBehaviour
     int uHospitalAmt = 0;   
     int uProfitAmt = 0;        
     int uPizzaAmt = 0;   
-    int uPeopleAmt = 0;       
+    int uPeopleAmt = 0;
 
-    
-  
 
     // Start is called before the first frame update
     void Start()
     {
+        
+        
         // Get all fields
         uEarnedAmt += GameObject.Find("GameManager").GetComponent<CountScore>().cash;
 
@@ -76,6 +76,8 @@ public class EndOFDay : MonoBehaviour
         uProfit.text = uProfitAmt.ToString();
         uPizza.text = uPizzaAmt.ToString();
         uPeople.text = uPeopleAmt.ToString();
+        
+
     }
 
     // Update is called once per frame
