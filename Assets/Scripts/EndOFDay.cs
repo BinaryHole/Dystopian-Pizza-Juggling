@@ -41,7 +41,7 @@ public class EndOFDay : MonoBehaviour
     void Start()
     {
         // Get all fields
-        uEarnedAmt = GameObject.Find("Player").GetComponent<Pickup>().cash;
+        uEarnedAmt = GameObject.Find("Player").GetComponent<CountScore>().cash;
 
         uRentAmt = 800;
 
@@ -50,6 +50,7 @@ public class EndOFDay : MonoBehaviour
         if (GameObject.Find("Player").GetComponent<Death>().isDead == 1)
         { 
             uHospitalAmt = Random.Range(500, 1000);
+            GameObject.Find("Player").GetComponent<Death>().isDead = 0;
         }
         else
         {
@@ -60,9 +61,9 @@ public class EndOFDay : MonoBehaviour
 
         uMoneyAmt -= uProfitAmt; 
 
-        uPizzaAmt = 0;
+        uPizzaAmt = GameObject.Find("Player").GetComponent<CountScore>().pizzasDelivered;
 
-        uPeopleAmt = 0;
+        uPeopleAmt = GameObject.Find("Player").GetComponent<CountScore>().peopleKilled;
 
 
         // Insert fields into UI
