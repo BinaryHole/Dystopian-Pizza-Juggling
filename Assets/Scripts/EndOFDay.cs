@@ -41,7 +41,7 @@ public class EndOFDay : MonoBehaviour
     void Start()
     {
         // Get all fields
-        uEarnedAmt = GameObject.Find("Player").GetComponent<CountScore>().cash;
+        uEarnedAmt += GameObject.Find("GameManager").GetComponent<CountScore>().cash;
 
         uRentAmt = 800;
 
@@ -61,9 +61,9 @@ public class EndOFDay : MonoBehaviour
 
         uMoneyAmt -= uProfitAmt; 
 
-        uPizzaAmt = GameObject.Find("Player").GetComponent<CountScore>().pizzasDelivered;
+        uPizzaAmt += GameObject.Find("GameManager").GetComponent<CountScore>().pizzasDelivered;
 
-        uPeopleAmt = GameObject.Find("Player").GetComponent<CountScore>().peopleKilled;
+        uPeopleAmt += GameObject.Find("GameManager").GetComponent<CountScore>().peopleKilled;
 
 
         // Insert fields into UI
