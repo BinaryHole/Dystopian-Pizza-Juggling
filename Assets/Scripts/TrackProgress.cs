@@ -16,6 +16,7 @@ public class TrackProgress : MonoBehaviour
         maxDistance = GameObject.Find("GameManager").GetComponent<LaunchPlayer>().maxDistance;
         distanceTravelled = GameObject.Find("GameManager").GetComponent<LaunchPlayer>().distanceTravelled;
 
+        ProgressSlider.minValue = 1;
         ProgressSlider.value = distanceTravelled;
         ProgressSlider.maxValue = maxDistance;
     }
@@ -23,6 +24,12 @@ public class TrackProgress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        updateDistance();
+    }
+
+    void updateDistance()
+    {
+        distanceTravelled = GameObject.Find("GameManager").GetComponent<LaunchPlayer>().distanceTravelled;
         ProgressSlider.value = distanceTravelled;
     }
 }
