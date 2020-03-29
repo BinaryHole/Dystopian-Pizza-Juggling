@@ -64,6 +64,6 @@ public class CashBack : MonoBehaviour
         GameObject cash = Instantiate(cashPrefab, pos, Quaternion.identity, spawnCashFrom.gameObject.transform);
 
         // apply force towards center of road
-        cash.GetComponent<Rigidbody>().AddForce(toMiddle * (float) (flyForce*100));
+        cash.GetComponent<Rigidbody>().AddForce(toMiddle.normalized * (float) (flyForce*10));
     }
 }

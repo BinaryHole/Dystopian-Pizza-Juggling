@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5471787755456119990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.14, y: 1.8, z: -34.47}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92,7 +92,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1068447, y: 1.5300884, z: 1.7273523}
+  m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5471787755456119991
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   cashPrefab: {fileID: 4093875514283190793, guid: 7eecb0b4fcf516742b25194917d2379d,
     type: 3}
   deliveredMaterial: {fileID: 2100000, guid: 7d980a96b6f1d684c901b84d19334a5e, type: 2}
-  flyForce: 10
+  flyForce: 5
   tileWidth: 10
 --- !u!54 &4844795785388332515
 Rigidbody:
