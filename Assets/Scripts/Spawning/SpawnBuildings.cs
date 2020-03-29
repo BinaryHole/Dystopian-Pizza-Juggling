@@ -12,8 +12,8 @@ public class SpawnBuildings : MonoBehaviour
     public GameObject buildingVariant1;
     public double buildingVariant1Prob;
 
-    // delivery building prefab
-    public GameObject deliveryBuilding;
+    // delivery spot prefab
+    public GameObject deliverySpot;
 
     // buildings spawn location
     public GameObject spawnBuildingsFrom;
@@ -56,19 +56,20 @@ public class SpawnBuildings : MonoBehaviour
         // calculate the position of the new building
         Vector3 position = new Vector3(sideOffset, 0, zOffset);
 
+        // determine the building variant
+        GameObject variant = determineBuildingVariant();
+
+        // spawn the building
+        GameObject building = Instantiate(variant, position, Quaternion.identity, spawnBuildingsFrom.transform);
+
         // determine the building type (a delivery building or not)
         if (determineIsDeliveryBuilding())
         {
-            // spawn a new delivery building
-            spawnDeliveryBuilding(position);
-        }
-        else
-        {
-            // determine the building variant
-            GameObject variant = determineBuildingVariant();
+            // determine if is right side
+            bool isRightSide = sideOffset > 0;
 
-            // spawn a new regular building with the variant
-            spawnRegularBuilding(variant, position);
+            // spawn a deliveryspot on the building
+            spawnDeliverySpot(building, isRightSide);
         }
     }
 
@@ -114,15 +115,29 @@ public class SpawnBuildings : MonoBehaviour
         return false;
     }
 
-    void spawnRegularBuilding(GameObject variant, Vector3 position)
+    void spawnDeliverySpot(GameObject building, bool rightSide)
     {
-        // spawn the building
-        Instantiate(variant, position, Quaternion.identity, spawnBuildingsFrom.transform);
-    }
+        GameObject side;
+        
+        // get the side containing the delivery spots
+        if (rightSide)
+        {
+            side = building.transform.Find("LeftSide").gameObject;
+        } else
+        {
+            side = building.transform.Find("RightSide").gameObject;
+        }
 
-    void spawnDeliveryBuilding(Vector3 position)
-    {
-        // spawn the delivery building
-        Instantiate(deliveryBuilding, position, Quaternion.identity, spawnBuildingsFrom.transform);
+        // determine the number of potential delivery spots on the building
+        int deliverySpotCount = side.transform.childCount;
+
+        // determine a random delivery spot
+        int deliverySpotNumber = Random.Range(1, deliverySpotCount);
+
+        // get the selected delivery spot
+        Transform selectedDeliverySpot = side.transform.GetChild(deliverySpotNumber);
+
+        // spawn an actual delivery spot in the selected delivery spot location
+        Instantiate(deliverySpot, selectedDeliverySpot);
     }
 }
