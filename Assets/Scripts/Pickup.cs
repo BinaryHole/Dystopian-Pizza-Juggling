@@ -29,7 +29,7 @@ public class Pickup : MonoBehaviour
 
             // This is where you would play a pickup sound effect
 
-            GameObject.Find("GameManager").GetComponent<CountScore>().cash += cashAdded;
+            CountScore.cash += cashAdded;
         }
     }
 }
