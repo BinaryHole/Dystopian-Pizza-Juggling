@@ -6,13 +6,13 @@ public class Death : MonoBehaviour
 {
     private Rigidbody rb;
     public GameObject gameManager;
-    public int isDead = 0;
+    static public bool isDead = false;
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Hazard")
         {
-            isDead = 1;
+            isDead = true;
             print("death comes to all");
             gameManager.GetComponent<LaunchPlayer>().isLanded = true;
         }
