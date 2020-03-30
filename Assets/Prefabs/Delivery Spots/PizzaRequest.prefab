@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc7e7162d356c0b458cc971941f4525b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cashPrefab: {fileID: 4093875514283190793, guid: 7eecb0b4fcf516742b25194917d2379d,
+  cashPrefab: {fileID: 6825326801719941437, guid: 1e84150cebbb49b448df20695f440df9,
     type: 3}
   deliveredMaterial: {fileID: -7637167852634237948, guid: bcd9fa1c9311c634d89a11ba44b0cb4c,
     type: 3}
@@ -57,7 +57,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: b082c83bb01b66440a7f3a86420afd9a,
         type: 3}
       propertyPath: m_Name
-      value: PizzaRequest Variant
+      value: PizzaRequest
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b082c83bb01b66440a7f3a86420afd9a,
         type: 3}
