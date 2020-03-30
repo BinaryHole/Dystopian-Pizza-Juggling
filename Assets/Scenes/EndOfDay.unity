@@ -1288,13 +1288,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uEarned: {fileID: 1240602081}
-  uRent: {fileID: 0}
-  uTaxes: {fileID: 0}
-  uHospital: {fileID: 0}
-  uProfit: {fileID: 0}
-  uPizza: {fileID: 0}
-  uPeople: {fileID: 0}
-  uMoney: {fileID: 0}
+  uRent: {fileID: 694536997}
+  uTaxes: {fileID: 1414551452}
+  uHospital: {fileID: 1633003757}
+  uProfit: {fileID: 1656739210}
+  uPizza: {fileID: 1821170446}
+  uPeople: {fileID: 2069747078}
+  uMoney: {fileID: 501585750}
 --- !u!114 &1082996734
 MonoBehaviour:
   m_ObjectHideFlags: 0
