@@ -12,7 +12,7 @@ public class CashBack : MonoBehaviour
     public Material deliveredMaterial;
 
     // force applied to the cash after spawning to 'fly' it to the middle of the road
-    public double flyForce;
+    public float flyForce;
 
     // offset towards the center of the road for cash spawning
     public double tileWidth;
@@ -64,12 +64,14 @@ public class CashBack : MonoBehaviour
         Vector3 toMiddle = (atMiddle - transform.position).normalized;
 
         // calculate spawn position of the cash (to spawn on the correct side of the building)
-        Vector3 pos = transform.position + (toMiddle * (float) tileWidth/2);
+        Vector3 pos = transform.position;
+
+        Debug.DrawLine(gameObject.transform.position, pos.normalized, Color.black, 1.5f);
 
         // Create cash in the position above the house
         GameObject cash = Instantiate(cashPrefab, pos, Quaternion.identity, spawnCashFrom.gameObject.transform);
 
         // apply force towards center of road
-        cash.GetComponent<Rigidbody>().AddForce(toMiddle.normalized * (float) (flyForce*10));
+        cash.GetComponent<Rigidbody>().AddForce(toMiddle.normalized * flyForce, ForceMode.Impulse);
     }
 }

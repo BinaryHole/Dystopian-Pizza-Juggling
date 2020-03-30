@@ -45,7 +45,7 @@ MonoBehaviour:
     type: 3}
   deliveredMaterial: {fileID: -7637167852634237948, guid: bcd9fa1c9311c634d89a11ba44b0cb4c,
     type: 3}
-  flyForce: 5
+  flyForce: 35
   tileWidth: 10
 --- !u!1001 &1997183875117619793
 PrefabInstance:
