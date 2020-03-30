@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LaunchPlayer : MonoBehaviour
 {
@@ -56,6 +57,7 @@ public class LaunchPlayer : MonoBehaviour
             player.GetComponent<PlayerController>().isLaunched = false;
             surfMusic.Stop();
             kaboom.Stop();
+            SceneManager.LoadScene("EndOfDay");
         }
     }
 
