@@ -17,12 +17,47 @@ public class StatsManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        uEarned.text = CountScore.cash.ToString();
+        // Set all variables
+        int uEarnedAmt = CountScore.todaysCash;
+        int uRentAmt = 400;
+        int uTaxesAmt = Random.Range(20, 300);
+        int uHospitalAmt = 0;
+        int uProfitAmt = 0;
+        int uPizzaAmt = CountScore.pizzasDelivered;
+        int uPeopleAmt = CountScore.peopleKilled;
+        int uMoneyAmt = 0;
+
+        // Check to see if player went to the hospital
+        if (Death.isDead == true)
+        {
+            uHospitalAmt = Random.Range(300, 1000);
+            Death.isDead = false;
+        }      
+
+        uProfitAmt = Profit(uEarnedAmt, uTaxesAmt, uRentAmt, uHospitalAmt);
+
+        // Update amount of money left until you win
+        CountScore.cashUntilWin -= uProfitAmt;
+
+        uMoneyAmt = CountScore.cashUntilWin;
+        
+
+        // Print all to fields
+        uEarned.text = uEarnedAmt.ToString();
+        uRent.text = "-" + uRentAmt;
+        uTaxes.text = "-" + uTaxesAmt;
+        uHospital.text = "-" + uHospitalAmt;
+        uProfit.text = uProfitAmt.ToString();
+        uPizza.text = uPizzaAmt.ToString();
+        uPeople.text = uPizzaAmt.ToString();
+        uMoney.text = uMoneyAmt.ToString();
+
+        // Set counter back to 0
+        CountScore.todaysCash = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    int Profit(int earned, int taxes, int rent, int hospital)
     {
-        
+        return earned - taxes - rent - hospital;
     }
 }
