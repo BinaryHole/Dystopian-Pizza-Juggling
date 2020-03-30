@@ -42,8 +42,14 @@ public class CashBack : MonoBehaviour
             // set delivered
             isDelivered = true;
 
-            // update the material of the building
+            // set the delivery spot material to successful
             GetComponent<Renderer>().material = deliveredMaterial;
+
+            // update the delivery spot layer to IgnoreRaycast
+            gameObject.layer = 2;
+
+            // disable the collider so that pizzas can pass through
+            GetComponent<Collider>().enabled = false;
         }
     }
 

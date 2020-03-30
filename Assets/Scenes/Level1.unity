@@ -790,6 +790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1182999230}
   - component: {fileID: 1182999231}
+  - component: {fileID: 1182999232}
   m_Layer: 0
   m_Name: Buildings
   m_TagString: Untagged
@@ -830,10 +831,32 @@ MonoBehaviour:
   buildingVariant1: {fileID: 7394594532585551333, guid: d2fb0a4d79de03e4a8d97e172089d352,
     type: 3}
   buildingVariant1Prob: 0.4
-  deliverySpot: {fileID: 5471787755456119990, guid: 860eb4e71227e8e48a29ebdbac8734d0,
-    type: 3}
   spawnBuildingsFrom: {fileID: 1182999229}
-  startingDeliveryBuildingProb: 0.15
+  startingDeliveryBuildingProb: 0.1
+--- !u!114 &1182999232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182999229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f34bd0aa1bf5884e80c7bb821f4f3eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deliverySpot: {fileID: 7536353075205325656, guid: 4b15dbd45c2792e44bc935211f1d6821,
+    type: 3}
+  pepperoniSpotMaterial: {fileID: 804817686325674929, guid: 26ff6ddc8e0fd6d49b0016253ba2f095,
+    type: 3}
+  hawaiianSpotMaterial: {fileID: -1926449681462852151, guid: b082c83bb01b66440a7f3a86420afd9a,
+    type: 3}
+  spicySpotMaterial: {fileID: 7725899117425552319, guid: d38e35d6f8c60554881b332380d1c4d9,
+    type: 3}
+  successfulSpotMaterial: {fileID: -7637167852634237948, guid: bcd9fa1c9311c634d89a11ba44b0cb4c,
+    type: 3}
+  hawaiianProb: 0.2
+  spicyProb: 0.1
 --- !u!1 &1243198633
 GameObject:
   m_ObjectHideFlags: 0
