@@ -41,11 +41,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc7e7162d356c0b458cc971941f4525b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cashPrefab: {fileID: 6825326801719941437, guid: 1e84150cebbb49b448df20695f440df9,
+  cashPrefab: {fileID: 5682254258920616127, guid: af8ada2d78f46d54e9732f6cd411ea80,
     type: 3}
   deliveredMaterial: {fileID: -7637167852634237948, guid: bcd9fa1c9311c634d89a11ba44b0cb4c,
     type: 3}
-  flyForce: 5
+  flyForce: 35
   tileWidth: 10
 --- !u!1001 &1997183875117619793
 PrefabInstance:
