@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SpawnBuildings : MonoBehaviour
 {
+    // create spawnDeliverySpot delegate and event for spawning delivery spots
+    public delegate void SpawnDeliverySpotDelegate(GameObject building, bool rightSide);
+    public event SpawnDeliverySpotDelegate spawnDeliverySpot;
+
     // primary building prefab and probabilites
     public GameObject buildingPrimary;
     private double buildingPrimaryProb;
@@ -11,9 +15,6 @@ public class SpawnBuildings : MonoBehaviour
     // building variant prefabs and probabilities
     public GameObject buildingVariant1;
     public double buildingVariant1Prob;
-
-    // delivery spot prefab
-    public GameObject deliverySpot;
 
     // buildings spawn location
     public GameObject spawnBuildingsFrom;
@@ -113,31 +114,5 @@ public class SpawnBuildings : MonoBehaviour
 
         // return regular building type if something goes wrong
         return false;
-    }
-
-    void spawnDeliverySpot(GameObject building, bool rightSide)
-    {
-        GameObject side;
-        
-        // get the side containing the delivery spots
-        if (rightSide)
-        {
-            side = building.transform.Find("LeftSide").gameObject;
-        } else
-        {
-            side = building.transform.Find("RightSide").gameObject;
-        }
-
-        // determine the number of potential delivery spots on the building
-        int deliverySpotCount = side.transform.childCount;
-
-        // determine a random delivery spot
-        int deliverySpotNumber = Random.Range(1, deliverySpotCount);
-
-        // get the selected delivery spot
-        Transform selectedDeliverySpot = side.transform.GetChild(deliverySpotNumber);
-
-        // spawn an actual delivery spot in the selected delivery spot location
-        Instantiate(deliverySpot, selectedDeliverySpot);
     }
 }
