@@ -1417,7 +1417,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1759589830}
-  isDead: 0
 --- !u!4 &1243198637
 Transform:
   m_ObjectHideFlags: 0
@@ -2029,9 +2028,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b49439af9f0a7b49adb9c0061c8aa55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cash: 0
-  pizzasDelivered: 0
-  peopleKilled: 0
   CashText: {fileID: 2113453906}
 --- !u!1 &1781169317
 GameObject:
@@ -2523,7 +2519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2144993, g: 0.509434, b: 0.03123889, a: 1}
+  m_Color: {r: 0.25644016, g: 0.6415094, b: 0.015129937, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
