@@ -1417,6 +1417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1759589830}
+  isDead: 0
 --- !u!4 &1243198637
 Transform:
   m_ObjectHideFlags: 0
@@ -1759,7 +1760,6 @@ GameObject:
   - component: {fileID: 1759589834}
   - component: {fileID: 1759589835}
   - component: {fileID: 1759589836}
-  - component: {fileID: 1759589837}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2029,19 +2029,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b49439af9f0a7b49adb9c0061c8aa55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cash: 0
+  pizzasDelivered: 0
+  peopleKilled: 0
   CashText: {fileID: 2113453906}
---- !u!114 &1759589837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759589830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 039f76e85adac284c8add9c440876651, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1781169317
 GameObject:
   m_ObjectHideFlags: 0
