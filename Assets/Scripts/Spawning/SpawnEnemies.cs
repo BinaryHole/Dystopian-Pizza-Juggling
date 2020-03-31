@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpawnEnemies : MonoBehaviour
 {
     public double enemySpawnProb;
-
     public GameObject spawnEnemiesFrom;
     public GameObject basicEnemy;
     public bool isLaunched;
