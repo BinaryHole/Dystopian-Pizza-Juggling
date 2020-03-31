@@ -2049,7 +2049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxFrameRate: 60
   minFrameRate: 45
-  switchThreshold: 1
+  switchThreshold: 30
 --- !u!1 &1781169317
 GameObject:
   m_ObjectHideFlags: 0
