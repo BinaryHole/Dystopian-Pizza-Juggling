@@ -34,7 +34,7 @@ public class LaunchPlayer : MonoBehaviour
         kaboom = sounds[1];
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         // launch player when they hit space
         if (!isLaunched && Input.GetKeyDown(KeyCode.Space))

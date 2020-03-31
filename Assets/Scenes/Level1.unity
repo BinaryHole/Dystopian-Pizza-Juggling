@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5186843, g: 0.557945, b: 0.5725493, a: 1}
+  m_IndirectSpecularColor: {r: 0.5187522, g: 0.5579849, b: 0.57252634, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -51,13 +51,13 @@ LightmapSettings:
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 0
+    m_EnableBakedLightmaps: 0
+    m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 1024
+    m_AtlasSize: 2048
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -589,12 +589,12 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1763,6 +1763,7 @@ GameObject:
   - component: {fileID: 1759589834}
   - component: {fileID: 1759589835}
   - component: {fileID: 1759589836}
+  - component: {fileID: 1759589837}
   m_Layer: 2
   m_Name: GameManager
   m_TagString: Untagged
@@ -2034,6 +2035,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CashText: {fileID: 2113453906}
+--- !u!114 &1759589837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759589830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1988a93a9b74a6e4384279152851daca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFrameRate: 60
+  minFrameRate: 45
+  switchThreshold: 1
 --- !u!1 &1781169317
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
         rb.drag = drag;
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
