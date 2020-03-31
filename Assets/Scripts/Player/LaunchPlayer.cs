@@ -8,6 +8,7 @@ public class LaunchPlayer : MonoBehaviour
     public GameObject player;
     private Rigidbody rb;
     public GameObject mainCamera;
+    public GameObject enemies;
 
     public Vector3 launchVector = new Vector3(0, 30, 0);
     public double playerSpeed = 10;
@@ -35,6 +36,7 @@ public class LaunchPlayer : MonoBehaviour
 
     void Update()
     {
+        // launch player when they hit space
         if (!isLaunched && Input.GetKeyDown(KeyCode.Space))
         {
             // launch the player
@@ -49,6 +51,7 @@ public class LaunchPlayer : MonoBehaviour
             rb.transform.position += motion;
         }
 
+        // end level after certain amount of time
         distanceTravelled = playerStartX + player.transform.position.z;
         if ((distanceTravelled >= maxDistance) || isLanded == true)
         {
@@ -72,7 +75,8 @@ public class LaunchPlayer : MonoBehaviour
         surfMusic.Play(0);
         kaboom.Play(0);
 
-        //for updating isLaunched in the PlayerController script
+        //for updating isLaunched in other (PlayerController and SpawnEnemies) scripts
         player.GetComponent<PlayerController>().isLaunched = true;
+        enemies.GetComponent<SpawnEnemies>().isLaunched = true;
     }
 }

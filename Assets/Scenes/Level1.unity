@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5187522, g: 0.5579849, b: 0.57252634, a: 1}
+  m_IndirectSpecularColor: {r: 0.5186843, g: 0.557945, b: 0.5725493, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -724,6 +724,7 @@ Transform:
   - {fileID: 899567316}
   - {fileID: 1791773389}
   - {fileID: 759674231}
+  - {fileID: 1818950821}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -736,6 +737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 899567316}
+  - component: {fileID: 899567317}
   m_Layer: 0
   m_Name: Billboards
   m_TagString: Untagged
@@ -757,6 +759,22 @@ Transform:
   m_Father: {fileID: 898517475}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &899567317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899567315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516925d2bf4342947a66aea8c6323777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  billboardSpawnProb: 0.1
+  basicBillboard: {fileID: 6892499660636974380, guid: 27f59cd99c5cdbf45a160c040da45058,
+    type: 3}
+  spawnBillboardsFrom: {fileID: 899567315}
 --- !u!1 &917253127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,6 +1784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1243198633}
   mainCamera: {fileID: 963194225}
+  enemies: {fileID: 1818950820}
   launchVector: {x: 0, y: 0, z: 0}
   playerSpeed: 30
   distanceTravelled: 0
@@ -2124,6 +2143,54 @@ Transform:
   m_Father: {fileID: 898517475}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1818950820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1818950821}
+  - component: {fileID: 1818950822}
+  m_Layer: 0
+  m_Name: Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1818950821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818950820}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.1988735, y: 4.525831, z: -0.5904217}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 898517475}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1818950822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818950820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965bbac2d4d00c24c825f5f579669db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnProb: 0.5
+  spawnEnemiesFrom: {fileID: 1818950820}
+  basicEnemy: {fileID: 680891277598531910, guid: ab061a50463a95845ba73c17c77d58c6,
+    type: 3}
+  isLaunched: 0
 --- !u!1 &1866384376
 GameObject:
   m_ObjectHideFlags: 0
