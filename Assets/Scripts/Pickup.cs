@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    // This is here for now, but should be tied to the GameManager later
-    public int cash;
-    
     // Start is called before the first frame update
     void Start()
     {
-        cash = 0;
+        
     }
 
     // Update is called once per frame
@@ -23,13 +20,17 @@ public class Pickup : MonoBehaviour
     {
         if (other.gameObject.CompareTag("cash"))
         {
-            // This should be semi-random later.
-            int cashAdded = 150;
+            int cashAdded = Random.Range(100, 300);
             
             other.gameObject.SetActive(false);
             Destroy(other.gameObject);
+
             // This is where you would play a pickup sound effect
-            cash += cashAdded;
+
+            
+            // Adds to cash total and to todaysCash. tbh I don't know if I need "cash" still
+            CountScore.cash += cashAdded;
+            CountScore.todaysCash += cashAdded;
         }
     }
 }

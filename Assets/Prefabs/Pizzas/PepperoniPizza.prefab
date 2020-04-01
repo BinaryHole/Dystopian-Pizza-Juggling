@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6892245237249822062}
   - component: {fileID: -4380881217042969344}
   - component: {fileID: -8749294291108881244}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PepperoniPizza
   m_TagString: Pizza
   m_Icon: {fileID: 0}
@@ -123,3 +123,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4771157367ae87542b666e13b88d929d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifespan: 1.5
