@@ -45,6 +45,7 @@ public class CashBack : MonoBehaviour
         if (!isDelivered && other.gameObject.tag == "Pizza")
         {
             deliverySfx.Play(0);
+            CountScore.pizzasDelivered++;
 
             // spawn the cash
             SpawnCash();
