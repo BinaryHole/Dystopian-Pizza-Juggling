@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LaunchPlayer : MonoBehaviour
@@ -9,6 +10,7 @@ public class LaunchPlayer : MonoBehaviour
     private Rigidbody rb;
     public GameObject mainCamera;
     public GameObject enemies;
+    public GameObject EndObject;
 
     public Vector3 launchVector = new Vector3(0, 30, 0);
     public double playerSpeed = 10;
@@ -27,6 +29,9 @@ public class LaunchPlayer : MonoBehaviour
     {
         isLaunched = false;
         rb = player.GetComponent<Rigidbody>();
+
+        EndObject = GameObject.Find("EndObject");
+        EndObject.SetActive(false);
 
         // Get audio sources
         sounds = GameObject.Find("SoundManager").GetComponents<AudioSource>();
@@ -60,7 +65,13 @@ public class LaunchPlayer : MonoBehaviour
             player.GetComponent<PlayerController>().isLaunched = false;
             surfMusic.Stop();
             kaboom.Stop();
-            SceneManager.LoadScene("EndOfDay");
+
+            if (distanceTravelled >= maxDistance)
+            {
+                EndObject.SetActive(true);
+            }
+
+            StartCoroutine("LoadNextScene");
         }
     }
 
@@ -78,5 +89,12 @@ public class LaunchPlayer : MonoBehaviour
         //for updating isLaunched in other (PlayerController and SpawnEnemies) scripts
         player.GetComponent<PlayerController>().isLaunched = true;
         enemies.GetComponent<SpawnEnemies>().isLaunched = true;
+    }
+
+    IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(5);
+
+        SceneManager.LoadScene("EndOfDay");
     }
 }
