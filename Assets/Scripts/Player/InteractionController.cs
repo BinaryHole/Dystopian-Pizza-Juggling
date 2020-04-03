@@ -27,8 +27,8 @@ public class InteractionController : MonoBehaviour
         // do player pizza throwing
         checkForShoot();
 
-        sounds = GetComponents<AudioSource>();
-        throwSound = sounds[3];
+        sounds = GameObject.Find("SoundManager").GetComponents<AudioSource>();
+        throwSound = sounds[6];
 
     }
 

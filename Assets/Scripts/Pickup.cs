@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+    public AudioSource[] sounds;
     public AudioSource kaching;
     
     // Start is called before the first frame update
     void Start()
     {
-        kaching = GetComponent<AudioSource>();
+        sounds = GameObject.Find("SoundManager").GetComponents<AudioSource>();
+        kaching = sounds[3];
     }
 
     // Update is called once per frame

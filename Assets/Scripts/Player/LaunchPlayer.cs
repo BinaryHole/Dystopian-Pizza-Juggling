@@ -29,9 +29,9 @@ public class LaunchPlayer : MonoBehaviour
         rb = player.GetComponent<Rigidbody>();
 
         // Get audio sources
-        sounds = GetComponents<AudioSource>();
+        sounds = GameObject.Find("SoundManager").GetComponents<AudioSource>();
         surfMusic = sounds[0];
-        kaboom = sounds[1];
+        kaboom = sounds[2];
     }
 
     private void FixedUpdate()
