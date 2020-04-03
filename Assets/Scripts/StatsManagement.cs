@@ -49,7 +49,7 @@ public class StatsManagement : MonoBehaviour
         uHospital.text = "-" + uHospitalAmt;
         uProfit.text = uProfitAmt.ToString();
         uPizza.text = uPizzaAmt.ToString();
-        uPeople.text = uPizzaAmt.ToString();
+        uPeople.text = uPeopleAmt.ToString();
         uMoney.text = uMoneyAmt.ToString();
 
         // Set counter back to 0
