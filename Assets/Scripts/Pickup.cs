@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+    public AudioSource kaching;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        kaching = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,9 +27,8 @@ public class Pickup : MonoBehaviour
             other.gameObject.SetActive(false);
             Destroy(other.gameObject);
 
-            // This is where you would play a pickup sound effect
+            kaching.Play(0);
 
-            
             // Adds to cash total and to todaysCash. tbh I don't know if I need "cash" still
             CountScore.cash += cashAdded;
             CountScore.todaysCash += cashAdded;
