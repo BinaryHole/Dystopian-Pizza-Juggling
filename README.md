@@ -11,6 +11,7 @@ Final project for Carleton University's IMD Game Design course.
 	Wind:		https://www.zapsplat.com/music/blustery-wind-in-field-recorded-close-to-ground/
 	Ambience:	https://www.zapsplat.com/music/ambience-city-of-london-sirens-distant-constant-construction-pounding-wind-in-trees-close-by/
 	Impact:		https://www.zapsplat.com/music/cartoon-hit-impact-squash-object/
+	Explosions:	https://www.premiumbeat.com/blog/free-explosion-sfx-vfx-elements/
 
 # Music
 
