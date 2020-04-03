@@ -6,35 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class TitleMenu : MonoBehaviour
 {
-    // Start music
-    void Start()
-    {
-        
-    }
-
-    // Play button onclick
-    void PlayNewGame()
-    {
-        SceneManager.LoadScene("Intro");
-    }
-
-    // Instructions button onclick
-    void Instructions()
-    {
-        
-    }
-
-    // Credits button onclick
-    void Credits()
-    {
-
-    }
-
-    // Quit button onclick
-    void Quit()
+    // Goto Quit
+    public void GotoQuit ()
     {
         Debug.Log("Quit!");
         Application.Quit();
     }
 
+    // Goto Play
+
+    public void GotoPlay ()
+    {
+        SceneManager.LoadScene("Level1");
+    }
 }
