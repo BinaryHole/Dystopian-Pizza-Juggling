@@ -18,11 +18,18 @@ public class InteractionController : MonoBehaviour
     // reference to the player
     public GameObject player;
 
+    AudioSource[] sounds;
+    AudioSource throwSound;
+
     // Update is called once per frame
     void Update()
     {
         // do player pizza throwing
         checkForShoot();
+
+        sounds = GameObject.Find("SoundManager").GetComponents<AudioSource>();
+        throwSound = sounds[6];
+
     }
 
     // Handles pizza throwing (checks if user is pressing left-mouse)
@@ -31,6 +38,8 @@ public class InteractionController : MonoBehaviour
         // check if the player is clicking the left mouse
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            throwSound.Play(0);
+            
             // instantiate the projectile pizza
             GameObject pizza = Instantiate(pepperoniPizza, player.transform.position, Quaternion.identity, spawnPizzasFrom.transform) as GameObject;
 

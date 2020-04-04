@@ -7,6 +7,14 @@ public class Death : MonoBehaviour
     private Rigidbody rb;
     public GameObject gameManager;
     static public bool isDead = false;  // Used to check hospital bills in StatsManagement.cs
+    public GameObject DeathObject;
+
+
+    void Start ()
+    {
+        DeathObject = GameObject.Find("DeathObject");
+        DeathObject.SetActive(false);
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -14,6 +22,7 @@ public class Death : MonoBehaviour
         {
             isDead = true;
             print("death comes to all");
+            DeathObject.SetActive(true);
             gameManager.GetComponent<LaunchPlayer>().isLanded = true;
         }
     }

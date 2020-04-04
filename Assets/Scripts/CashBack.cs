@@ -20,6 +20,10 @@ public class CashBack : MonoBehaviour
     // track if the building has been delivered to or not
     bool isDelivered;
 
+    // SFX
+    AudioSource[] sounds;
+    AudioSource deliverySfx;
+
     private void Start()
     {
         // initialize variables
@@ -27,6 +31,10 @@ public class CashBack : MonoBehaviour
 
         // find the cash empty-object in the hierarchy
         spawnCashFrom = GameObject.FindGameObjectWithTag("cashLocation");
+
+        // Get sound
+        sounds = GameObject.Find("SoundManager").GetComponents<AudioSource>();
+        deliverySfx = sounds[5];
     }
 
     //Check if the pizza thrown collided with the house object
@@ -36,6 +44,9 @@ public class CashBack : MonoBehaviour
         // if the current building has not been delivered to, 
         if (!isDelivered && other.gameObject.tag == "Pizza")
         {
+            deliverySfx.Play(0);
+            CountScore.pizzasDelivered++;
+
             // spawn the cash
             SpawnCash();
 

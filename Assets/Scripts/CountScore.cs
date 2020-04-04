@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CountScore : MonoBehaviour
 {
     // Statics so they can transfer in between scenes
+    // Example: CountScore.cash += 100;
     static public int cash = 0;
     static public int todaysCash = 0;
     static public int pizzasDelivered = 0;

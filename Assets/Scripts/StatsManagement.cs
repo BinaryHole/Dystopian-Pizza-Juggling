@@ -30,7 +30,7 @@ public class StatsManagement : MonoBehaviour
         // Check to see if player went to the hospital
         if (Death.isDead == true)
         {
-            uHospitalAmt = Random.Range(300, 1000);
+            uHospitalAmt = Random.Range(500, 1500);
             Death.isDead = false;
         }      
 
@@ -49,7 +49,7 @@ public class StatsManagement : MonoBehaviour
         uHospital.text = "-" + uHospitalAmt;
         uProfit.text = uProfitAmt.ToString();
         uPizza.text = uPizzaAmt.ToString();
-        uPeople.text = uPizzaAmt.ToString();
+        uPeople.text = uPeopleAmt.ToString();
         uMoney.text = uMoneyAmt.ToString();
 
         // Set counter back to 0
