@@ -15,4 +15,17 @@ public class EodButtons : MonoBehaviour
         Debug.Log("Quit!");
         Application.Quit();
     }
+
+    public void DeathCards ()
+    {
+        
+    }
+
+    public void Restart ()
+    {
+        CountScore.cashUntilWin = 10000;
+        CountScore.peopleKilled = 0;
+        CountScore.pizzasDelivered = 0;
+        SceneManager.LoadScene("Title");
+    }
 }
