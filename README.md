@@ -2,6 +2,31 @@
 
 Final project for Carleton University's IMD Game Design course.
 
+## How to Play
+	1. Download build
+	2. Unzip build
+	3. Double-click exe file
+	4. Further controls and instructions can be found on the main menu.
+
+## Contributions
+
+# Mark McGregor
+
+# Vivien Shen
+
+# Joshua Strutt
+
+# Brandon White
+
+- All music and sound effects
+- Menu UI (all of main menu, end of level, win/lose, death card view)
+- In-Game Art (Menu backgrounds, logo, death cards, billboards)
+- Linking scenes together
+- Any scripts associated with menus
+- CouuntScore script
+- All in-game UI except for pizza selection
+- Mouse cursor
+
 
 ## Citations
 
