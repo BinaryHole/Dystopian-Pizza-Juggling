@@ -18,15 +18,14 @@ Final project for Carleton University's IMD Game Design course.
 
 # Brandon White
 
-- All music and sound effects
-- Menu UI (all of main menu, end of level, win/lose, death card view)
-- In-Game Art (Menu backgrounds, logo, death cards, billboards)
-- Linking scenes together
-- Any scripts associated with menus
-- CouuntScore script
-- All in-game UI except for pizza selection
-- Mouse cursor
-
+	- All music and sound effects
+	- Menu UI (all of main menu, end of level, win/lose, death card view)
+	- In-Game Art (Menu backgrounds, logo, death cards, billboards)
+	- Linking scenes together
+	- Any scripts associated with menus
+	- CountScore script
+	- All in-game UI except for pizza selection
+	- Mouse cursor
 
 ## Citations
 
