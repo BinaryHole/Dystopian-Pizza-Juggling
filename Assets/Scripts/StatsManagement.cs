@@ -30,7 +30,7 @@ public class StatsManagement : MonoBehaviour
         // Check to see if player went to the hospital
         if (Death.isDead == true)
         {
-            uHospitalAmt = Random.Range(300, 1000);
+            uHospitalAmt = Random.Range(500, 1500);
             Death.isDead = false;
         }      
 
