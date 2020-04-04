@@ -63,7 +63,8 @@ public class LaunchPlayer : MonoBehaviour
             isLanded = true;
             rb.useGravity = true;
             player.GetComponent<PlayerController>().isLaunched = false;
-            surfMusic.Stop();
+
+            StartCoroutine("FadeOut");
             kaboom.Stop();
 
             if (distanceTravelled >= maxDistance)
@@ -91,10 +92,28 @@ public class LaunchPlayer : MonoBehaviour
         enemies.GetComponent<SpawnEnemies>().isLaunched = true;
     }
 
+    // Short delay before switching scenes
     IEnumerator LoadNextScene()
     {
         yield return new WaitForSeconds(5);
 
         SceneManager.LoadScene("EndOfDay");
+    }
+
+    // Godspeed boris 1998 o7 https://forum.unity.com/threads/fade-out-audio-source.335031/
+    // This wil fade music, Boris1998 provided it on the unity forums for everyone
+    IEnumerator FadeOut()
+    {
+        float startVolume = surfMusic.volume;
+
+        while (surfMusic.volume > 0)
+        {
+            surfMusic.volume -= startVolume * Time.deltaTime / 10;
+
+            yield return null;
+        }
+
+        surfMusic.Stop();
+        surfMusic.volume = startVolume;
     }
 }
