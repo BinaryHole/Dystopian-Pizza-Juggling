@@ -163,7 +163,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 138282d7fda9ada488adfc53e0db219a,
         type: 3}
       propertyPath: m_Name
-      value: Coin
+      value: coin
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 138282d7fda9ada488adfc53e0db219a,
         type: 3}

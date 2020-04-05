@@ -158,7 +158,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91624969}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2d77af093491b4a49a4a2fa20588593d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -803,7 +803,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761313478}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2d77af093491b4a49a4a2fa20588593d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1449,7 +1449,7 @@ MonoBehaviour:
     type: 3}
   buildingVariant1: {fileID: 7394594532585551333, guid: d2fb0a4d79de03e4a8d97e172089d352,
     type: 3}
-  buildingVariant1Prob: 0.4
+  buildingVariant1Prob: 0.5
   spawnBuildingsFrom: {fileID: 1182999229}
   startingDeliveryBuildingProb: 0.1
 --- !u!114 &1182999232
@@ -1540,7 +1540,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243198633}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2d77af093491b4a49a4a2fa20588593d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2715,11 +2715,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1759589832}
-  - component: {fileID: 1759589831}
   - component: {fileID: 1759589833}
   - component: {fileID: 1759589836}
   - component: {fileID: 1759589837}
   - component: {fileID: 1759589838}
+  - component: {fileID: 1759589831}
   m_Layer: 2
   m_Name: GameManager
   m_TagString: Untagged
@@ -2743,7 +2743,7 @@ MonoBehaviour:
   mainCamera: {fileID: 963194225}
   enemies: {fileID: 1818950820}
   EndObject: {fileID: 0}
-  launchVector: {x: 0, y: 0, z: 0}
+  launchVector: {x: 0, y: 30, z: 0}
   playerSpeed: 30
   distanceTravelled: 0
   maxDistance: 1000
@@ -3168,7 +3168,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007778782}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2d77af093491b4a49a4a2fa20588593d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3212,7 +3212,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014673691}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2d77af093491b4a49a4a2fa20588593d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

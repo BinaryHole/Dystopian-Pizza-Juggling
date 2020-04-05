@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnBuildings : MonoBehaviour
 {
     // create spawnDeliverySpot delegate and event for spawning delivery spots
-    public delegate void SpawnDeliverySpotDelegate(GameObject building, bool rightSide);
+    public delegate void SpawnDeliverySpotDelegate(GameObject building);
     public event SpawnDeliverySpotDelegate spawnDeliverySpot;
 
     // primary building prefab and probabilites
@@ -63,14 +63,20 @@ public class SpawnBuildings : MonoBehaviour
         // spawn the building
         GameObject building = Instantiate(variant, position, Quaternion.identity, spawnBuildingsFrom.transform);
 
+        // determine if is right side
+        bool isRightSide = sideOffset > 0;
+
+        // mirror the building if it's on the right side
+        if (isRightSide)
+        {
+            building.transform.localScale = new Vector3(-1, 1, 1);
+        }
+
         // determine the building type (a delivery building or not)
         if (determineIsDeliveryBuilding())
         {
-            // determine if is right side
-            bool isRightSide = sideOffset > 0;
-
             // spawn a deliveryspot on the building
-            spawnDeliverySpot(building, isRightSide);
+            spawnDeliverySpot(building);
         }
     }
 

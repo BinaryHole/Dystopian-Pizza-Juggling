@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LaunchPlayer : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     public GameObject player;
     private Rigidbody rb;
@@ -62,7 +62,7 @@ public class LaunchPlayer : MonoBehaviour
         {
             isLanded = true;
             rb.useGravity = true;
-            player.GetComponent<PlayerController>().isLaunched = false;
+            player.GetComponent<PlayerMovementController>().isLaunched = false;
 
             StartCoroutine("FadeOut");
             kaboom.Stop();
@@ -88,7 +88,7 @@ public class LaunchPlayer : MonoBehaviour
         kaboom.Play(0);
 
         //for updating isLaunched in other (PlayerController and SpawnEnemies) scripts
-        player.GetComponent<PlayerController>().isLaunched = true;
+        player.GetComponent<PlayerMovementController>().isLaunched = true;
         enemies.GetComponent<SpawnEnemies>().isLaunched = true;
     }
 
