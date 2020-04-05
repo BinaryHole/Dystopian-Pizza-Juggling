@@ -23,7 +23,7 @@ public class Death : MonoBehaviour
             isDead = true;
             print("death comes to all");
             DeathObject.SetActive(true);
-            gameManager.GetComponent<LaunchPlayer>().isLanded = true;
+            gameManager.GetComponent<GameController>().isLanded = true;
         }
     }
 }

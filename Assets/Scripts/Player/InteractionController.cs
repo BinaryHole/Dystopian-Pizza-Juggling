@@ -21,15 +21,24 @@ public class InteractionController : MonoBehaviour
     AudioSource[] sounds;
     AudioSource throwSound;
 
+    private void Start()
+    {
+        // set the throw sound
+        sounds = GameObject.Find("SoundManager").GetComponents<AudioSource>();
+        throwSound = sounds[6];
+    }
+
     // Update is called once per frame
     void Update()
     {
-        // do player pizza throwing
-        checkForShoot();
+        GameController gameController = FindObjectOfType<GameController>();
 
-        sounds = GameObject.Find("SoundManager").GetComponents<AudioSource>();
-        throwSound = sounds[6];
-
+        // make sure the player is in the air to allow for shooting
+        if (gameController.isLaunched && !gameController.isLanded)
+        {
+            // do player pizza throwing
+            checkForShoot();
+        }
     }
 
     // Handles pizza throwing (checks if user is pressing left-mouse)
