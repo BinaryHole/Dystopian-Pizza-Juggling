@@ -27,35 +27,22 @@ public class SpawnDeliverySpot : MonoBehaviour
         pepperoniProb = 1 - (hawaiianProb + spicyProb);
     }
 
-    void spawnDeliverySpot(GameObject building, bool rightSide)
+    void spawnDeliverySpot(GameObject building)
     {
-        GameObject side;
-        Quaternion rotation = Quaternion.identity;
-
-        // get the side containing the delivery spots
-        if (rightSide)
-        {
-            side = building.transform.Find("LeftSide").gameObject;
-
-            // rotate the prefab 180 degrees for correct angle
-            rotation = Quaternion.Euler(0, 180, 0);
-        }
-        else
-        {
-            side = building.transform.Find("RightSide").gameObject;
-        }
+        // get the delivery spots container
+        GameObject container = building.transform.Find("DeliverySpots").gameObject;
 
         // determine the number of potential delivery spots on the building
-        int deliverySpotCount = side.transform.childCount;
+        int deliverySpotCount = container.transform.childCount;
 
         // determine a random delivery spot
         int deliverySpotNumber = Random.Range(1, deliverySpotCount);
 
         // get the selected delivery spot
-        Transform selectedDeliverySpot = side.transform.GetChild(deliverySpotNumber);
+        Transform selectedDeliverySpot = container.transform.GetChild(deliverySpotNumber);
 
         // spawn an actual delivery spot in the selected delivery spot location
-        GameObject newDeliverySpot = Instantiate(deliverySpot, selectedDeliverySpot.position, rotation, selectedDeliverySpot);
+        GameObject newDeliverySpot = Instantiate(deliverySpot, selectedDeliverySpot.position, Quaternion.identity, selectedDeliverySpot);
 
         // determine delivery spot pizza type
         Material deliverySpotMaterial = determineDeliverySpotType();
