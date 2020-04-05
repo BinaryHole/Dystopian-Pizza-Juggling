@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class InteractionController : MonoBehaviour
 {
+    // the cooldown of throwing pizzas, and the reference to the next point in time that the player will be able to throw a pizza again.
+    public float pizzaThrowCooldown;
+    public float nextAvailableShot;
+
     // reference to different types of pizzas
     public GameObject pepperoniPizza;
     public GameObject hawaiianPizza;
@@ -29,8 +33,11 @@ public class InteractionController : MonoBehaviour
     void checkForShoot()
     {
         // check if the player is clicking the left mouse
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > nextAvailableShot)
         {
+            // pizza throwing cooldown
+            nextAvailableShot = Time.time + pizzaThrowCooldown;
+
             // instantiate the projectile pizza
             GameObject pizza = Instantiate(pepperoniPizza, player.transform.position, Quaternion.identity, spawnPizzasFrom.transform) as GameObject;
 
