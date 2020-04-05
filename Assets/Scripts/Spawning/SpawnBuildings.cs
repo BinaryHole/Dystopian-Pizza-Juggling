@@ -63,6 +63,9 @@ public class SpawnBuildings : MonoBehaviour
         // spawn the building
         GameObject building = Instantiate(variant, position, Quaternion.identity, spawnBuildingsFrom.transform);
 
+        // spawn the variation objects on the new building
+        FindObjectOfType<SpawnBuildingVariationObjects>().spawnBuildingVariationObjects(building);
+
         // determine if is right side
         bool isRightSide = sideOffset > 0;
 
