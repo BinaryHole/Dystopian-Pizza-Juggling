@@ -42,7 +42,7 @@ public class SpawnDeliverySpot : MonoBehaviour
         Transform selectedDeliverySpot = container.transform.GetChild(deliverySpotNumber);
 
         // spawn an actual delivery spot in the selected delivery spot location
-        GameObject newDeliverySpot = Instantiate(deliverySpot, selectedDeliverySpot.position, Quaternion.identity, selectedDeliverySpot);
+        GameObject newDeliverySpot = Instantiate(deliverySpot, selectedDeliverySpot.position, building.transform.rotation, selectedDeliverySpot);
 
         // determine delivery spot pizza type
         Material deliverySpotMaterial = determineDeliverySpotType();

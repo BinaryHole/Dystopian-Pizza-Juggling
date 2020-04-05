@@ -69,10 +69,10 @@ public class SpawnBuildings : MonoBehaviour
         // determine if is right side
         bool isRightSide = sideOffset > 0;
 
-        // mirror the building if it's on the right side
+        // rotate the building if it's on the right side
         if (isRightSide)
         {
-            building.transform.localScale = new Vector3(-1, 1, 1);
+            building.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
         // determine the building type (a delivery building or not)
