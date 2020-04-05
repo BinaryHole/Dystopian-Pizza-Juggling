@@ -26,6 +26,7 @@ Final project for Carleton University's IMD Game Design course.
 	- CountScore script
 	- All in-game UI except for pizza selection
 	- Mouse cursor
+	- Handwriting font
 
 ## Citations
 
