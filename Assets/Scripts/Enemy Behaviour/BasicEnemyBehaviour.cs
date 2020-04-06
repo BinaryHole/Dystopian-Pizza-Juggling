@@ -14,6 +14,9 @@ public class BasicEnemyBehaviour : MonoBehaviour
     public float followSpeed;
     public float minFollowDistance;
 
+    AudioSource[] sounds;
+    AudioSource explosion;
+
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -21,6 +24,10 @@ public class BasicEnemyBehaviour : MonoBehaviour
 
         // get enemy movin
         rb.AddForce(0, 0, -travelSpeed, ForceMode.Impulse);
+
+        // explosion for booming enemies
+        sounds = GameObject.Find("SoundManager").GetComponents<AudioSource>();
+        explosion = sounds[2];
     }
 
     void Update()
@@ -64,4 +71,15 @@ public class BasicEnemyBehaviour : MonoBehaviour
         //Vector3.Normalize(movement);
         rb.AddForce(movement * followSpeed);
     }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.tag == "Pizza")
+        {
+            CountScore.peopleKilled++;
+            rb.useGravity = true;
+            explosion.Play(0);
+        }
+    }
+
 }
