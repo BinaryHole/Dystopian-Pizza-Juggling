@@ -10,6 +10,10 @@ public class SpawnRoads : MonoBehaviour
     public GameObject roadVariant1;
     public double roadVariant1Prob;
 
+    // intersection road prefab and probability
+    public GameObject roadIntersection;
+    public float roadIntersectionProb;
+
     // road spawn location
     public GameObject spawnRoadsFrom;
 
@@ -34,6 +38,20 @@ public class SpawnRoads : MonoBehaviour
 
         // spawn the new road tile
         Instantiate(roadObject, newPos, Quaternion.identity, spawnRoadsFrom.transform);
+    }
+
+    public void spawnIntersectionRow(float zOffset, double tileSize)
+    {
+        // spawn the middle intersection tile
+        Instantiate(roadIntersection, new Vector3(0, 0, zOffset), Quaternion.identity, spawnRoadsFrom.transform);
+
+        // determine both road variation types
+        GameObject leftRoadType = determineRoadType();
+        GameObject rightRoadType = determineRoadType();
+
+        // spawn both roads (rotated 90 degrees to be going sideways)
+        Instantiate(leftRoadType, new Vector3((float) (-1 * tileSize), 0, zOffset), Quaternion.Euler(0, 90, 0), spawnRoadsFrom.transform);
+        Instantiate(rightRoadType, new Vector3((float) tileSize, 0, zOffset), Quaternion.Euler(0, 90, 0), spawnRoadsFrom.transform);
     }
 
     GameObject determineRoadType()

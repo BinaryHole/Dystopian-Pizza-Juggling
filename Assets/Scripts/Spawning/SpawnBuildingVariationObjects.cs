@@ -48,7 +48,7 @@ public class SpawnBuildingVariationObjects : MonoBehaviour
     }
 
     // used to get a binary state (true or false) given a probability
-    bool getWeightedBoolean(float probWeight)
+    public bool getWeightedBoolean(float probWeight)
     {
         // get a random value between 0 and 1
         float random = Random.value;
