@@ -28,6 +28,8 @@ public class SpawnBuildings : MonoBehaviour
     // code-defined delivery-building probability
     double deliveryBuildingProb;
 
+    public double increasingChance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -91,12 +93,18 @@ public class SpawnBuildings : MonoBehaviour
 
         if (rand <= buildingPrimaryProb)
         {
-            // spawn primary building
+            // spawn primary building and increase chance of spawning variant1
+            deliveryBuildingProb += increasingChance;
+            regularBuildingProb -= increasingChance;
+            // print("chance increased to: " + regularBuildingProb);
             return buildingPrimary;
         }
         else if (rand <= buildingPrimaryProb + buildingVariant1Prob)
         {
-            // spawn variant1 building
+            // spawn variant1 building and return chances back to normal
+            deliveryBuildingProb = startingDeliveryBuildingProb;
+            regularBuildingProb = 1 - deliveryBuildingProb;
+            // print("chance reset to: " + regularBuildingProb);
             return buildingVariant1;
         }
 

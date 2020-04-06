@@ -1537,6 +1537,7 @@ MonoBehaviour:
   buildingVariant1Prob: 0.5
   spawnBuildingsFrom: {fileID: 1182999229}
   startingDeliveryBuildingProb: 0.1
+  increasingChance: 0.1
 --- !u!114 &1182999232
 MonoBehaviour:
   m_ObjectHideFlags: 0
