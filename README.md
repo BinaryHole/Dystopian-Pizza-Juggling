@@ -67,6 +67,12 @@ The game is available to play at our [itch.io page](https://markmcgregor.itch.io
 
 ### Textures
  
+ 	// Level Assets
+	
+	Buildings:	 	https://unsplash.com/photos/plm7G8xdyPk
+
+	Level Background:	https://hdrihaven.com/hdri/?h=sunflowers
+ 
 	// End of Level Screen
 	
 	Cork:	https://unsplash.com/photos/KsAo8ouBn8A
