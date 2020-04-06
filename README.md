@@ -30,7 +30,11 @@ The game is available to play at our [itch.io page](https://markmcgregor.itch.io
 	- Player movement facing direction
 	
 ### Vivien Shen
-
+	- All character models (player, enemy, hot-air balloon, cannon)
+	- Pizza asset
+	- Pizza UI design
+	- Cash spawning script
+	
 ### Joshua Strutt
 	- Proceedural level generation
 		- spawning enemies, created enemy behaviour, enemies getting attacked
