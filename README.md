@@ -1,3 +1,4 @@
+![title-banner](https://cdn.discordapp.com/attachments/675061196839321617/696534498883534848/FBPG_Poster.jpg)
 # Fly-by Pizza Guy
 
 Final project for Carleton University's IMD Game Design course.
@@ -11,7 +12,21 @@ Final project for Carleton University's IMD Game Design course.
 ## Contributions
 
 ### Mark McGregor
-
+	- Proceedural level generation
+		- spawning buildings and roads
+		- spawning building and road variations based on probabilities
+		- spawning building variation objects at random
+		- spawning intersections at random
+		- spawning delivery spots at random
+	- All environment assets (buildings, roads, garbage bin, window boards, bench)
+	- Delivery spot assets (different variations, completed)
+	- Dynamic quality-switching
+	- Coin asset
+	- Coin animation
+	- Delivery actions (success, coin launched[improved], coin picked up)
+	- Level despawning behind player
+	- Player movement facing direction
+	
 ### Vivien Shen
 
 ### Joshua Strutt
