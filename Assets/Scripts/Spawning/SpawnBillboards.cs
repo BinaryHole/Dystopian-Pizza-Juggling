@@ -8,6 +8,8 @@ public class SpawnBillboards : MonoBehaviour
     public GameObject basicBillboard;
     public GameObject spawnBillboardsFrom;
 
+    public Material[] billboards = new Material[3];
+
     void Start()
     {
         FindObjectOfType<SpawnController>().spawnRow += spawnBillboards;
@@ -23,12 +25,12 @@ public class SpawnBillboards : MonoBehaviour
             if (Random.Range(1, 3) == 1)
             {
                 // spawn on left
-                xPos = -5.0f;
+                xPos = -4.0f;
             }
             else
             {
                 // spawn on right
-                xPos = 5.0f;
+                xPos = 4.0f;
             }
 
             // determine y height of the billboard
@@ -40,12 +42,11 @@ public class SpawnBillboards : MonoBehaviour
             // determine the billboard type
             GameObject billboardObject = determineBillboardType();
 
-            //determine billboard scale
-            //billboardObject.transform.localScale *= Random.Range(1.0f, 2.0f);
-
             // spawn the new billy
-            GameObject newBillboard = Instantiate(billboardObject, newPos, Quaternion.identity, spawnBillboardsFrom.transform);
-            newBillboard.transform.localScale *= Random.Range(1.0f, 3.0f);
+            GameObject newBillboard = Instantiate(basicBillboard, newPos, basicBillboard.transform.rotation, spawnBillboardsFrom.transform);
+            MeshRenderer mr = newBillboard.GetComponent<MeshRenderer>();
+            mr.material = billboards[Random.Range(0, billboards.Length)];
+            newBillboard.transform.localScale *= Random.Range(1.0f, 2.0f);
         }
     }
 
