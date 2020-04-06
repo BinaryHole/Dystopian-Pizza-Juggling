@@ -4,6 +4,8 @@
 Final project for Carleton University's IMD Game Design course.
 
 ## How to Play
+The game is available to play at our [itch.io page](https://markmcgregor.itch.io/fly-by-pizza-guy)
+
 	1. Download build
 	2. Unzip build
 	3. Double-click exe file
