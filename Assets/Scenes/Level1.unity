@@ -1852,6 +1852,9 @@ MonoBehaviour:
   roadVariant1: {fileID: 2916871530078529516, guid: b9af777e49859b849be0aea413a00c07,
     type: 3}
   roadVariant1Prob: 0.2
+  roadIntersection: {fileID: 5188522914509676015, guid: 9e93d99ee2a321f4a8a1e9441deadfa3,
+    type: 3}
+  roadIntersectionProb: 0.1
   spawnRoadsFrom: {fileID: 1542850400}
 --- !u!1 &1577436524
 GameObject:
@@ -3460,6 +3463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fccc51fc59e2be49b473f77de9433f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intersectionProb: 0
   tileLimit: 30
   tileSize: 10
 --- !u!65 &2086514068

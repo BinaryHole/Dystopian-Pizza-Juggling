@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class SpawnController : MonoBehaviour
 {
     // delegate used to send spawn events to the spawner scripts (spawn roads and spawn buildigns)
     public delegate void SpawnRowDelegate(float offset, double tileSize, bool isEndOfLevel);
     public event SpawnRowDelegate spawnRow;
+
+    // probability of spawning an intersection row
+    public float intersectionProb;
 
     // define tile characteristics for spawning
     public int tileLimit;
@@ -34,14 +38,28 @@ public class SpawnController : MonoBehaviour
 
     void spawnNewTiles()
     {
+        // get the SpawnRoads class for publicly-used variables
+        SpawnRoads spawnRoads = FindObjectOfType<SpawnRoads>();
+
         // calculate the z-offset of the new tile
         float zOffset = (float)(lastTileOffset + tileSize);
 
         // spawn new tiles as needed
         if (rowCount < tileLimit)
         {
-            // spawn a new tile row (road and buildings)
-            spawnRow(zOffset, tileSize, false);
+            // if the row is an intersection row
+            if (FindObjectOfType<SpawnBuildingVariationObjects>().getWeightedBoolean(spawnRoads.roadIntersectionProb))
+            {
+                // spawn an intersection row
+                spawnRoads.spawnIntersectionRow(zOffset, tileSize);
+            }
+
+            // if the row is a normal row (road and buildings), spawn a regular row
+            else
+            {
+                // spawn a new tile row (road and buildings)
+                spawnRow(zOffset, tileSize, false);
+            }
 
             // set the last tile offset to the zOffset of the new tile
             lastTileOffset = zOffset;
