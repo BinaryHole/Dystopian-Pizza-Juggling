@@ -32,7 +32,15 @@ The game is available to play at our [itch.io page](https://markmcgregor.itch.io
 ### Vivien Shen
 
 ### Joshua Strutt
-
+	- Proceedural level generation
+		- spawning enemies, created enemy behaviour, enemies getting attacked
+		- spawning billboards, selecting from random billboards
+		- reduced chance of long periods of time with no spawns (time spent without spawning increases spawn chances)
+	- Character controls
+	- implemented models (character, enemy, cannon)
+	- pizza throwing cooldowns
+	- more stuff but im too lazy to go find the rest, if this counts towards our grade LMK and ill update this
+	
 ### Brandon White
 
 	- All music and sound effects
